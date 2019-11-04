@@ -1,0 +1,24 @@
+service: diabeses
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: dev
+  environment:
+    #APP
+    APP_NAME: diabeses
+    # MONGO
+    DB_CONNECTION_STRING: ${file(./config/env.dev.yml):DB_CONNECTION_STRING}
+
+  
+functions:
+  api:
+      handler: handler.routers
+      events:
+        - http:
+            path: /{proxy+}
+            method: ANY
+            cors: true
+
+
+plugins:
+  - serverless-offline
