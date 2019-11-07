@@ -100,7 +100,7 @@ export default {
 #campoNome{
   margin-bottom: 7px;
   margin-top: 30px;
-  margin-right: 30px;
+  margin-right: 33px;
 }
 #textEndereco{
   margin-right: 200px;
