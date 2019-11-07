@@ -16,6 +16,6 @@ export default new Router({
       path: '/cadastro-usuario',
       name: 'CadastroUsuario',
       component: CadastroUsuario
-    }
+    },
   ]
 })
