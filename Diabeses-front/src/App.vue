@@ -3,15 +3,15 @@
     <div>
       <b-navbar toggleable="lg" type="dark" variant="info">
         <b-navbar-brand href="#" @click="$router.push('/')">
-          <img style="max-width: 50px;" src="https://1.bp.blogspot.com/-QSbjySRn4d4/V3gNs9X2RhI/AAAAAAAACMo/u-gRAe0SeXohkcfTnTUVjSRJyiABKe-mACKgB/s1600/tumblr_inline_o00mxpTtb51snfyzd_540.png">
+          <img style="max-width: 50px;" src="./assets/diabeses-logo1.png">
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
-              <b-nav-item active right href="#">login</b-nav-item>
-              <b-nav-item active right href="#" >Cadastre-se</b-nav-item>
+              <b-nav-item active right @click="$router.push('/login')">login</b-nav-item>
+              <b-nav-item active right @click="$router.push('/cadastro-usuario')" >Cadastre-se</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
