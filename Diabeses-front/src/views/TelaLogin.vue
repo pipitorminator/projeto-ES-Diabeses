@@ -1,5 +1,6 @@
 <template>
   <div class="row d-flex justify-content-center">
+    <notifications group="login" position="top right"/>
     <div id="CamposLogin" class="card col-md-4">
       <div class="card-body text-center">
         <h3>
@@ -75,9 +76,23 @@ export default {
           .then(response => {
             resolve(response.data[0]);
             if(response.data[0]){
-              alert("Logado com sucesso!");
+              this.$notify({
+                group: "login",
+                type: "success",
+                title: "Logado",
+                duration: 10000,
+                speed: 1000,
+                text: "Login feito com sucesso."
+          });
             }else{
-              alert("Email ou senha errados!")
+              this.$notify({
+                group: "login",
+                type: "error",
+                title: "Atenção",
+                duration: 10000,
+                speed: 1000,
+                text: "Email ou Senha incorretos."
+          });
             }
             this.Loading = false
           })
