@@ -6,6 +6,7 @@ var userSchema = new mongoose.Schema(
         _id: mongoose.Types.ObjectId,
         nome: {type:String, required: [true, '{PATH} é um campo obrigatório']},
         email: {type:String, required: [true, '{PATH} é um campo obrigatório']},
+        senha: {type:String, required: [true, '{PATH} é um campo obrigatório']},
     }
 
 );
