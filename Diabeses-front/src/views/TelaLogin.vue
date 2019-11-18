@@ -2,11 +2,7 @@
   <div class="row d-flex justify-content-center">
     <div id="CamposLogin" class="card col-md-4">
       <div class="card-body text-center">
-        <h3>
-          Login
-          <i v-if="Loading" class="fas fas fa-spinner fa-pull-right fa-spin"></i>
-        </h3>
-        
+        <h3>Login</h3>
         <b-form @submit="onSubmit">
           <div id="campoEmail">
             <b-form-group
@@ -62,30 +58,13 @@ export default {
     return {
       Email: "",
       Senha: "",
-      Loading: false
+      name: ""
     };
   },
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      return new Promise((resolve, reject) => {
-        this.Loading = true;
-        this.$api()
-          .get(`${config.jsonServer}/api/userLogin?email=${this.Email}&senha=${this.Senha}`)
-          .then(response => {
-            resolve(response.data[0]);
-            if(response.data[0]){
-              alert("Logado com sucesso!");
-            }else{
-              alert("Email ou senha errados!")
-            }
-            this.Loading = false
-          })
-          .catch(err => {
-            console.log('error ' + err)
-            this.Loading = false
-          })
-      })
+      //TODO IR PARA TELA DE INICIO USUARIO
     }
   }
 };

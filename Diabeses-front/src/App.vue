@@ -12,6 +12,8 @@
           <b-navbar-nav class="ml-auto">
               <b-nav-item active right @click="$router.push('/login')">login</b-nav-item>
               <b-nav-item active right @click="$router.push('/cadastro-usuario')" >Cadastre-se</b-nav-item>
+              <b-nav-item active right @click="$router.push('/cadastro-medicos-clinicas')" >Cadastro de medicos e clinicas</b-nav-item>
+              <b-nav-item active rigth @click="$router.push('/dicas')">Dicas </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>

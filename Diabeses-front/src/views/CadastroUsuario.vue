@@ -132,4 +132,7 @@ export default {
   margin-right: 40px;
   margin-bottom: 7px;
 }
+select{
+  margin-right: -28px;
+}
 </style>
