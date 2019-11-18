@@ -1,5 +1,6 @@
 <template>
   <div class="row d-flex justify-content-center">
+    <notifications group="login" position="top right"/>
     <div id="CamposLogin" class="card col-md-4">
       <div class="card-body text-center">
         <h3>Login</h3>
@@ -64,7 +65,42 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
+<<<<<<< HEAD
       //TODO IR PARA TELA DE INICIO USUARIO
+=======
+      return new Promise((resolve, reject) => {
+        this.Loading = true;
+        this.$api()
+          .get(`${config.jsonServer}/api/userLogin?email=${this.Email}&senha=${this.Senha}`)
+          .then(response => {
+            resolve(response.data[0]);
+            if(response.data[0]){
+              this.$notify({
+                group: "login",
+                type: "success",
+                title: "Logado",
+                duration: 10000,
+                speed: 1000,
+                text: "Login feito com sucesso."
+          });
+            }else{
+              this.$notify({
+                group: "login",
+                type: "error",
+                title: "Atenção",
+                duration: 10000,
+                speed: 1000,
+                text: "Email ou Senha incorretos."
+          });
+            }
+            this.Loading = false
+          })
+          .catch(err => {
+            console.log('error ' + err)
+            this.Loading = false
+          })
+      })
+>>>>>>> 09e285d508edfc8c474943332e5d7528c38532a5
     }
   }
 };
