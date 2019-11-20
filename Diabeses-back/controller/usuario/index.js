@@ -1,5 +1,4 @@
 const httpStatus = require('../../commons/http_status_codes');
-const errors = require('../../commons/errors');
 const connectToDatabase = require('../../commons/database');
 const mongoose      = require('mongoose');
 
