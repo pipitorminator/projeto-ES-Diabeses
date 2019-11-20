@@ -65,9 +65,6 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-<<<<<<< HEAD
-      //TODO IR PARA TELA DE INICIO USUARIO
-=======
       return new Promise((resolve, reject) => {
         this.Loading = true;
         this.$api()
@@ -100,7 +97,6 @@ export default {
             this.Loading = false
           })
       })
->>>>>>> 09e285d508edfc8c474943332e5d7528c38532a5
     }
   }
 };
