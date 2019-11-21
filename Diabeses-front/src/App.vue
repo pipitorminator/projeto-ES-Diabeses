@@ -11,12 +11,14 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
             <b-nav-item active right href="#" @click="$router.push('/perfil-clinica-medico')">Clínicas e Médicos</b-nav-item>
+            <b-nav-item active rigth @click="$router.push('/prognostico')">Prognostico </b-nav-item>
           </b-navbar-nav>
           <b-navbar-nav class="ml-auto">
               <b-nav-item active right @click="$router.push('/login')">login</b-nav-item>
               <b-nav-item active right @click="$router.push('/cadastro-usuario')" >Cadastre-se</b-nav-item>
               <b-nav-item active right @click="$router.push('/cadastro-medicos-clinicas')" >Cadastro de medicos e clinicas</b-nav-item>
               <b-nav-item active rigth @click="$router.push('/dicas')">Dicas </b-nav-item>
+      
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>

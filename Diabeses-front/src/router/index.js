@@ -7,6 +7,7 @@ import CadastroMedicoClinica from '../views/CadastroClinicasMedicos.vue'
 import Dicas from '../views/Dicas.vue'
 import PerfilClinicaMedico from '../views/PerfilClinicaMedico.vue'
 import PerfilClinicaMedicoInfo from '../views/PerfilClinicaMedicoInfo.vue'
+import prognostico from '../views/prognostico.vue'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/perfil-clinica-medico/:id',
       name: 'PerfilClinicaMedicoInfo',
       component: PerfilClinicaMedicoInfo
+    },
+    {
+      path: '/prognostico',
+      name: 'prognostico',
+      component: prognostico
     }
   ]
 })
