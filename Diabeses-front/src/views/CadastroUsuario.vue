@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div id="Campos">
-      <h1 id="h1"> Digite seus dados pessoais </h1>
+  <div  class="row d-flex justify-content-center">
+    <div id="Campos"  class="card col-md-">
+      <h3 id="h1"> Digite seus dados pessoais </h3>
       <div id="campoNome"> <input v-model="this.NomeUsuario" size="60" placeholder="Digite seu Nome"></div>
   
       <div id="campoCpf_Telefone"> 
@@ -26,25 +26,30 @@
         <div id="Estado_Cidade_Bairro">   
           <input id="Estado" v-model="this.Estado"  placeholder="Estado"> 
           <input id="Cidade" v-model="this.Cidade"  placeholder="Cidade">
-          <input id="Bairro" v-model="this.Bairro" placeholder="Bairro">
         </div> 
         <div id="Rua_Numero"> 
+          <input id="Bairro" v-model="this.Bairro" placeholder="Bairro">
           <input v-model="this.Rua" placeholder="Rua">
-          <input v-model="this.Numero" placeholder="Número e complemento">
+          <input v-model="this.Numero" size="4px" placeholder="Número e complemento">
         </div>
         <div id="campoNumero">  </div>
       </div>
 
       <div id="campoLogin">
         <p id="textLogin"> Digite os dados do seu login: </p>
-        <div id="campoEmail"> <input type="email" size="60" v-model="this.Email"  placeholder="Digite seu E-mail"></div>
-        <div id="campoSenha"> <input type="password" size="60" v-model="this.senha"  placeholder="Digite sua senha"></div>
+        <div id="campoEmail">
+          <input type="email" size="60" v-model="this.Email"  placeholder="Digite seu E-mail">   
+        </div>
+        <div id="campoSenha">
+          <input type="password" size="60" v-model="this.senha"  placeholder="Digite sua senha">
+        </div>
         <div id="campoSenhaConfirm"> <input type="password" size="60" v-model="this.senha"  placeholder="Confirme sua senha"></div>
       </div>
       
       <div id="botoes"> 
-        <button type="button" onclick="LimparCampos()">Limpar</button>
-        <button type="button" onclick="Cadastrar()">Cadastrar</button>
+        <b-button variant="secondary" type="Submit" id="btnLimpar">Limpar</b-button>
+        <b-button variant="secondary" type="Submit" id="btnCadastro">Cadastrar</b-button>
+      </div>
         
       </div>
 
@@ -81,8 +86,10 @@ export default {
 <style scoped>
 #Campos{
   text-align: center;
-  margin-top: 70px;
-  background-color:rgb(206, 200, 200) ;
+  margin-top: 40px;
+  background-color: #f8f8ff8a;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  
 }
 #campoCpf_Telefone{
   margin-right: 0px;
@@ -108,11 +115,12 @@ export default {
   color: black;
 }
 #Estado_Cidade_Bairro{
-  margin-left: 50px;
+  
+  margin-right: 137px;
 }
 #Rua_Numero{
   margin-top: 5px;
-  margin-right: 132px;
+  margin-right: 66px;
 }
 #textLogin{
   margin-top: 10px;
