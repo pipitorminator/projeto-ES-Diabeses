@@ -17,8 +17,32 @@ var medicoClinicaController = function (medicoClinicaSchema) {
         }
     }
 
+    async function cadastroMedicoClinica(req, res) {
+        try {
+            await connectToDatabase();
+
+            let medicoClinica = new medicoClinicaSchema(req.body);
+            medicoClinica._id = new mongoose.Types.ObjectId();
+            medicoClinica.Avaliacao = 0;
+            console.log(medicoClinica);
+
+            await medicoClinica.save(function (err) {
+                if (err) {
+                  res.status(httpStatus.InternalServerError).send('Erro:' + err);
+                }
+                else {
+                  res.status(httpStatus.Created).end();
+                }
+              });
+
+        } catch (e) {
+            res.status(httpStatus.InternalServerError).send('Erro:' + e);
+        }
+    }
+
     return {
         getAll: getAll,
+        cadastroMedicoClinica: cadastroMedicoClinica,
 
     }
 
