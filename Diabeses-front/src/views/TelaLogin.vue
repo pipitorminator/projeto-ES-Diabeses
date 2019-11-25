@@ -1,54 +1,61 @@
 <template>
-  <div class="row d-flex justify-content-center">
-    <notifications group="login" position="top right"/>
-    <div id="CamposLogin" class="card col-md-4">
-      <div class="card-body text-center">
-        <h3>Login</h3>
-        <b-form @submit="onSubmit">
-          <div id="campoEmail">
-            <b-form-group
-              label-cols="2"
-              label-cols-lg="2"
-              label-class="fas fa-envelope fa-2x"
-              label-for="input-default"
-            >
-              <b-form-input
-                id="input-login"
-                class="text-center input-form"
-                type="email"
-                v-model="Email"
-                placeholder="Digite seu E-mail"
-                required
-              ></b-form-input>
-            </b-form-group>
-          </div>
-
-          <div id="campoSenha">
-            <b-form-group
-              label-cols="2"
-              label-cols-lg="2"
-              label-class="fas fa-lock fa-2x"
-              label-for="input-senha"
-            >
-              <b-form-input
-                id="input-senha"
-                class="text-center input-form"
-                type="password"
-                v-model="Senha"
-                placeholder="Digite sua senha"
-                required
-              ></b-form-input>
-            </b-form-group>
-          </div>
-
-          <div id="botao">
-            <b-button variant="primary" type="Submit" id="btLogin">Login</b-button>
-            <b-link @click="$router.push('/cadastro-usuario')">ou cadastre-se</b-link>
-          </div>
-        </b-form>
+  <body>
+      <div id="fundo-externo"> 
+        <div id="fundo"> 
+          <img src="https://i.dailymail.co.uk/i/newpix/2018/02/19/19/4962620800000578-0-image-a-5_1519067319665.jpg">
+        </div>
       </div>
-    </div>
-  </div>
+      <div class="row d-flex justify-content-center">
+        <notifications group="login" position="top right"/>
+        <div id="CamposLogin" class="card col-md-4">
+          <div class="card-body text-center">
+            <h3>Login</h3>
+            <b-form @submit="onSubmit">
+              <div id="campoEmail">
+                <b-form-group
+                  label-cols="2"
+                  label-cols-lg="2"
+                  label-class="fas fa-envelope fa-2x"
+                  label-for="input-default"
+                >
+                  <b-form-input
+                    id="input-login"
+                    class="text-center input-form"
+                    type="email"
+                    v-model="Email"
+                    placeholder="Digite seu E-mail"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </div>
+
+              <div id="campoSenha">
+                <b-form-group
+                  label-cols="2"
+                  label-cols-lg="2"
+                  label-class="fas fa-lock fa-2x"
+                  label-for="input-senha"
+                >
+                  <b-form-input
+                    id="input-senha"
+                    class="text-center input-form"
+                    type="password"
+                    v-model="Senha"
+                    placeholder="Digite sua senha"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </div>
+
+              <div id="botao">
+                <b-button variant="primary" type="Submit" id="btLogin">Login</b-button>
+                <b-link @click="$router.push('/cadastro-usuario')">ou cadastre-se</b-link>
+              </div>
+            </b-form>
+          </div>
+        </div>
+      </div>
+  </body>
 </template>
 
 <script>
@@ -103,6 +110,20 @@ export default {
 </script>
 
 <style scoped>
+
+#fundo-externo {
+    overflow: hidden; /* para que não tenha rolagem se a imagem de fundo for maior que a tela */
+    width: 100%;
+    height: 100%;
+    position: relative; /* criamos um contexto para posicionamento */
+}
+
+#fundo {
+    position: fixed; /* posição fixa para que a possível rolagem da tela não revele espaços em branco */
+    width: 100%;
+    height: 100%;
+}
+
 .input-form {
   box-sizing: content-box;
   background-color: transparent;
@@ -116,7 +137,7 @@ export default {
 
 #CamposLogin {
   margin-top: 150px;
-  background-color: #f8f8ff;
+  background-color:rgb(240, 240, 240,0.9);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 #TextEmail {

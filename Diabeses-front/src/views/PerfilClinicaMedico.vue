@@ -1,27 +1,34 @@
 <template>
-    <div class="container">
-        <div v-for="perfilCM in perfilsCMs" :key="perfilCM.id" @click="onLoadPerfilCM(perfilCM.id)">
-            <br>
-            <div class="card flex-row flex-wrap">
-                <div class="card-header border-0">
-                    <img :src="perfilCM.imgUrl" alt="" height="150" width="250">
-                </div>
-                <div class="card-block px-2">
-                    <h4 class="card-title">{{ perfilCM.title }}</h4>
-                    <br>
-                    <p class="card-text">
-                        <b>Endereço:</b> {{ perfilCM.endereco }}
-                    </p>
-                    <p class="card-text">
-                        <b>Avaliacao:</b> {{ perfilCM.avaliacao }}
-                    </p>
-                </div>
-                <div class="w-100"></div>
-                
-            </div>
-            <br>
+    <body>
+        <div id="fundo-externo"> 
+        <div id="fundo"> 
+            <img src="https://i.dailymail.co.uk/i/newpix/2018/02/19/19/4962620800000578-0-image-a-5_1519067319665.jpg">
         </div>
-    </div>
+        </div>
+        <div class="container">
+            <div v-for="perfilCM in perfilsCMs" :key="perfilCM.id" @click="onLoadPerfilCM(perfilCM.id)">
+                <br>
+                <div class="card flex-row flex-wrap">
+                    <div class="card-header border-0">
+                        <img :src="perfilCM.imgUrl" alt="" height="150" width="250">
+                    </div>
+                    <div class="card-block px-2">
+                        <h4 class="card-title">{{ perfilCM.title }}</h4>
+                        <br>
+                        <p class="card-text">
+                            <b>Endereço:</b> {{ perfilCM.endereco }}
+                        </p>
+                        <p class="card-text">
+                            <b>Avaliacao:</b> {{ perfilCM.avaliacao }}
+                        </p>
+                    </div>
+                    <div class="w-100"></div>
+                    
+                </div>
+                <br>
+            </div>
+        </div>
+    </body>
 </template>
 
 <script>
@@ -90,9 +97,23 @@ export default {
 
 <style scoped>
 
+#fundo-externo {
+    overflow: hidden; /* para que não tenha rolagem se a imagem de fundo for maior que a tela */
+    width: 100%;
+    height: 100%;
+    position: relative; /* criamos um contexto para posicionamento */
+}
+
+#fundo {
+    position: fixed; /* posição fixa para que a possível rolagem da tela não revele espaços em branco */
+    width: 100%;
+    height: 100%;
+}
+.card {
+    background-color:rgb(240, 240, 240,0.8);
+}
 .card:hover {
-  background-color:rgb(240, 240, 240);
-  box-shadow: 5px 5px 5px #2c3e50;
+    box-shadow: 5px 5px 5px #2c3e50;
 }
 
 

@@ -23,7 +23,6 @@
         </b-collapse>
       </b-navbar>
     </div>
-    <br>
     <router-view />
   </div>
 </template>
